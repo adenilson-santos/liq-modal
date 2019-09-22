@@ -1,0 +1,28 @@
+{
+  "name": "liq-modal",
+  "version": "1.0.0",
+  "description": "Simple and Easy modal, call the funcion just one time.",
+  "main": "liq-modal.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adenilson-santos/liq-modal.git"
+  },
+  "keywords": [
+    "modal",
+    "liq",
+    "easy",
+    "simple"
+  ],
+  "author": "Adenilson Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adenilson-santos/liq-modal/issues"
+  },
+  "homepage": "https://github.com/adenilson-santos/liq-modal#readme"
+}
