@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../liq-modal.js"></script>
+
+  <style>
+      .content {
+          background: white;
+          padding: 20px;
+      }
+  </style>
+</head>
+<body>
+  <div id="my-modal">
+    <div class="content">
+        First modal, content here.
+    </div>
+  </div>
+
+
+  <div id="my-modal-2">
+    <div class="content">
+        Second modal, content here.
+    </div>
+  </div>
+
+
+  <div id="my-modal-3">
+    <div class="content">
+        Third and last modal.
+    </div>
+  </div>
+
+  <button class="liq-modal__btn" data-liq-modal-open="#my-modal">Aqui</button>
+  <button class="liq-modal__btn" data-liq-modal-open="#my-modal-2">Abre o 2</button>
+
+  <button class="another-btn" data-liq-modal-open="#my-modal-3">aaaa</button>
+</body>
+  <script>
+    liqModals() // Get all elements with default class liq-modal__btn
+
+    liqModals({ // Get specified elements by you. With this you can make specific changes
+      selector: ".another-btn"
+    })
+  </script>
+</html>
