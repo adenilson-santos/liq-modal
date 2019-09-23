@@ -28,6 +28,9 @@ function createContainer (modalEl, options) {
   container.style.justifyContent  = "center"
   container.style.alignItems      = "center"
   container.style.boxSizing       = "border-box"
+  container.style.borderRadius    = options.container.radius || "5px"
+  container.style.boxShadow       = options.container.shadow || "0px 1px 2px 0px black"
+  container.style.border          = options.container.border || "none"
 
   modalEl.innerHTML = ""
   modalEl.append(container)
