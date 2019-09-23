@@ -60,7 +60,7 @@ You can try get liq-modal.js or liq-modal.min.js files and put inside of your pr
 #### Specific Usage (Specified tag)
 
 ```html
-  <button class="another-btn" data-liq-modal-open="#my-modal-3">Random button</button>
+<button class="another-btn" data-liq-modal-open="#my-modal-3">Random button</button>
   
 <script>
 liqModals({ // Get specified elements by you. With this you can make specific changes
@@ -104,7 +104,7 @@ liqModals({ // Get specified elements by you. With this you can make specific ch
 
 ##### For more details take a look in the examples path.
 
-##MIT LICENSE
+## MIT LICENSE
 
 Copyright (c) 2019 - Adenilson Santos
 ```
