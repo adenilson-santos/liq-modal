@@ -14,11 +14,11 @@
 ### Installation
 #### NPM
 ```sh
-npm i liq-modal
+$ npm i liq-modal
 ```
 #### Yarn
 ```sh
-yarn add liq-moda
+$ yarn add liq-modal
 ```
 
 **After NPM or Yarn installation you can use like this: **
@@ -31,9 +31,18 @@ import "liq-modal/liq-modal"
 liqModals()
 ```
 
-#### Direct copy code
-You can try get liq-modal.js or liq-modal.min.js files and put inside of your project, then call liqModals()...
+#### Direct usage
+You can try get liq-modal.js or liq-modal.min.js files/cdn's and put inside of your project, then call liqModals()...
 ```html
+<!-- Use the CDN's minified versions (use just one)-->
+<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.5/liq-modal.min.js"></script>
+<script src="https://unpkg.com/liq-modal@1.0.5/liq-modal.min.js"></script>
+
+<!-- Use the CDN's non minified versions (use just one) -->
+<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.5/liq-modal.js"></script>
+<script src="https://unpkg.com/liq-modal@1.0.5/liq-modal.js"></script>
+
+<!-- Or local file -->
 <script src="liq-modal.min.js"></script>
 ```
 
