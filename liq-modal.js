@@ -15,10 +15,12 @@ function initAllModals(modalBtns, options) {
 
 function initClickEvent (modalBtn, modalEl, options) {
   modalBtn.onclick = function (e) {
+    if(e.target.tagName == "A") e.preventDefault() 
     if (e.target !== this) return;
     fade(modalEl, 0.1, options)
   }
   modalEl.onclick = function (e) {
+    if(e.target.tagName == "A") e.preventDefault() 
     if (e.target !== this) return;
     fade(modalEl, -0.1, options)
   }
@@ -30,15 +32,15 @@ function modalStyle(modalEl, options) {
   modalEl.style.alignItems        = "center"
   modalEl.style.padding           =  options && options.padding || "20px"
   modalEl.style.display           = "none"
-  modalEl.style.backgroundColor   =  options && options.bgColor || "white"
   modalEl.style.position          = "fixed"
   modalEl.style.top               = "0px"
   modalEl.style.left              = "0px"
-  modalEl.style.zIndex            = "10"
+  modalEl.style.zIndex            = options && options.zIndex || "10"
   modalEl.style.width             = "100%"
+  modalEl.style.maxWidth          = "none"
   modalEl.style.height            = "100vh"
   modalEl.style.boxSizing         = "border-box"
-  modalEl.style.backgroundColor   = "rgba(0,0,0, 0.7)"
+  modalEl.style.backgroundColor   = options && options.bgColor || "rgba(0,0,0, 0.7)"
 }
 
 function fade (modalEl, count, options) {
@@ -56,6 +58,7 @@ function fade (modalEl, count, options) {
     if (fadeOpacity > 0.9 || fadeOpacity < 0.1) {
       clearInterval(fade)
       if(count < 0) modalEl.style.display = "none"
+      document.body.style.overflowY == "hidden" ? document.body.style.overflowY = "" : document.body.style.overflowY = "hidden"
     }
   }, interval); 
 }
