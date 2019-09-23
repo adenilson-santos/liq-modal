@@ -1,6 +1,6 @@
 {
   "name": "liq-modal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple and Easy modal, call the function just one time.",
   "main": "liq-modal.js",
   "directories": {
@@ -17,7 +17,11 @@
     "modal",
     "liq",
     "easy",
-    "simple"
+    "simple",
+    "liquid",
+    "liquid-modal",
+    "liq-modal",
+    "simple-modal"
   ],
   "author": "Adenilson Santos",
   "license": "MIT",
