@@ -66,6 +66,7 @@ You can try get liq-modal.js or liq-modal.min.js files and put inside of your pr
 liqModals({ // Get specified elements by you. With this you can make specific changes
 	selector: ".another-btn",
 	container: {
+    active: true,
 		// ... You can use a container and personalizate it, see more in advanced use.
 	}
 })
