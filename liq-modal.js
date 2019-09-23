@@ -1,4 +1,4 @@
-function liqModals (options = {}) {
+function liqModals (options = { container: { active: false } }) {
   const modalBtns = document.querySelectorAll(options.selector || ".liq-modal__btn")
   
   initAllModals(modalBtns, options)
@@ -7,10 +7,32 @@ function liqModals (options = {}) {
 function initAllModals(modalBtns, options) {
   Array.from(modalBtns).forEach(btn => {
     var modalEl = document.querySelector(btn.dataset.liqModalOpen)
+    if (options.container && options.container.active) modalEl = createContainer(modalEl, options)
 
     modalStyle(modalEl, options)
     initClickEvent(btn, modalEl, options)
   })
+}
+
+function createContainer (modalEl, options) {
+  let container = document.createElement("div")
+  
+  container.innerHTML             = modalEl.innerHTML
+  container.style.padding         = options.container.padding || "10px"
+  container.style.backgroundColor = options.container.bgColor || "white"
+  container.style.width           = options.container.width ||"500px"
+  container.style.maxWidth        = options.container.maxWidth || "500px"
+  container.style.height          = options.container.height || "auto"
+  container.style.display         = "flex"
+  container.style.flexDirection   = "column"
+  container.style.justifyContent  = "center"
+  container.style.alignItems      = "center"
+  container.style.boxSizing       = "border-box"
+
+  modalEl.innerHTML = ""
+  modalEl.append(container)
+
+  return modalEl
 }
 
 function initClickEvent (modalBtn, modalEl, options) {
