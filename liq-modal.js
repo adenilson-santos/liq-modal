@@ -44,6 +44,11 @@ function initClickEvent (modalBtn, modalEl, options) {
     if (e.target !== this) return;
     fade(modalEl, -0.1, options)
   }
+
+  document.onkeydown = function (e) { 
+    if(modalEl.style.display == "flex" && e.key == 'Escape')
+      fade(modalEl, -0.1, options)
+  }
 }
 
 function modalStyle(modalEl, options) {
