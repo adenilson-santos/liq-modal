@@ -73,7 +73,7 @@ function modalStyle(modalEl, options) {
 
 function fade (modalEl, count, options) {
   let { fadeTime } = options
-  let interval = fadeTime 
+  let interval = fadeTime || 0 
   let fadeOpacity = count > 0 ? 0.0 : 1
 
   modalEl.style.opacity = fadeOpacity
