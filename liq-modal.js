@@ -16,11 +16,9 @@ function initAllModals(modalBtns, options) {
 function initClickEvent (modalBtn, modalEl, options) {
   modalBtn.onclick = function (e) {
     if(e.target.tagName == "A") e.preventDefault() 
-    if (e.target !== this) return;
     fade(modalEl, 0.1, options)
   }
   modalEl.onclick = function (e) {
-    if(e.target.tagName == "A") e.preventDefault() 
     if (e.target !== this) return;
     fade(modalEl, -0.1, options)
   }
