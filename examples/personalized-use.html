@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../liq-modal.min.js"></script>
+
+  <style>
+      .content {
+          background: white;
+          padding: 20px;
+      }
+  </style>
+</head>
+<body>
+  <div id="my-modal">
+    <div class="content">
+        First modal, content here.
+    </div>
+  </div>
+
+
+  <div id="my-modal-2">
+    Second modal, content here.
+  </div>
+
+  <div id="my-modal-3">
+    <div class="content">
+        Third and last modal.
+    </div>
+  </div>
+
+  <button class="liq-modal__btn" data-liq-modal-open="#my-modal">Aqui</button>
+  <button class="liq-modal__btn" data-liq-modal-open="#my-modal-2">Abre o 2</button>
+
+  <button class="another-btn" data-liq-modal-open="#my-modal-3">aaaa</button>
+</body>
+  <script>
+    // Ps: No one configuration is required
+    
+    liqModals({
+      bgColor: "dodgerblue", // Modal background color
+      padding: "0px", // Modal padding
+      zIndex: 50, // Modal z-index
+      fadeTime: 500, // Modal fade in/out time
+      container: {
+        active: true, // Active container inside modal?
+        padding: "20px", // Padding of container
+        bgColor: "orange", // Background color of container
+        width: "400px", // Width of container
+        maxWidth: "300px", // Max Width of container
+        height: "200px", // Height of container
+        radius: "10px", // Border Radius of container
+        shadow: "2px 2px 0px 0px black", // Box shadow of container 
+        border: '1px solid white' // Border of container
+      }
+    })
+
+    liqModals({ 
+      selector: ".another-btn", // Get specified elements by you. With this you can make specific changes
+      container: {
+       // ... 
+      }
+    })
+  </script>
+</html>

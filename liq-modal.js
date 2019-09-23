@@ -88,5 +88,5 @@ function fade (modalEl, count, options) {
       if(count < 0) modalEl.style.display = "none"
       document.body.style.overflowY == "hidden" ? document.body.style.overflowY = "" : document.body.style.overflowY = "hidden"
     }
-  }, interval); 
+  }, interval / 100); 
 }
