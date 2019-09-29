@@ -44,8 +44,8 @@ function initClickEvent (modalBtn, modalEl, options) {
     if(e.target.tagName == "A") e.preventDefault() 
     fade(modalEl, 0.1, options)
   }
-  modalEl.onclick = (e) => {
-    if (e.target !== e.target) return;
+  modalEl.onclick = function (e) {
+    if (e.target !== this) return;
     fade(modalEl, -0.1, options)
   }
 
