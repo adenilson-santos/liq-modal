@@ -1,8 +1,29 @@
-function liqModals (options = { container: { active: false } }) {
-  window.onload = () => {
-    const modalBtns = document.querySelectorAll("[data-liq-modal-open]")
-    initAllModals(modalBtns, options)
+function liqModals (options) {
+  options = defaultOptions(options)
+  const modalBtns = document.querySelectorAll("[data-liq-modal-open]")
+  const modalEl = document.querySelector(options.selector)
+
+  let returnValues = {
+    close: close,
+    open: open,
+    activeButtons: modalBtns,
+    styleOptions: options,
+    modalElement: modalEl
   }
+  
+  function close () {
+    if (!modalEl) return returnValues
+    fade(modalEl, -0.1, options)
+  }
+
+  function open () {
+    if (!modalEl) return returnValues
+    fade(modalEl, 0.1, options)
+  }
+
+  if (!modalEl) initAllModals(modalBtns, options)
+
+  return returnValues
 }
 
 function initAllModals(modalBtns, options) {
@@ -19,19 +40,20 @@ function createContainer (modalEl, options) {
   let container = document.createElement("div")
   
   container.innerHTML             = modalEl.innerHTML
-  container.style.padding         = options.container.padding || "10px"
-  container.style.backgroundColor = options.container.bgColor || "white"
-  container.style.width           = options.container.width ||"500px"
-  container.style.maxWidth        = options.container.maxWidth || "500px"
-  container.style.height          = options.container.height || "auto"
-  container.style.display         = "flex"
-  container.style.flexDirection   = "column"
-  container.style.justifyContent  = "center"
-  container.style.alignItems      = "center"
-  container.style.boxSizing       = "border-box"
-  container.style.borderRadius    = options.container.radius || "5px"
-  container.style.boxShadow       = options.container.shadow || "0px 1px 2px 0px black"
-  container.style.border          = options.container.border || "none"
+  container.style.padding         = options.container.padding
+  container.style.backgroundColor = options.container.backgroundColor
+  container.style.width           = options.container.width
+  container.style.maxWidth        = options.container.maxWidth
+  container.style.height          = options.container.height
+  container.style.display         = options.container.display
+  container.style.flexDirection   = options.container.flexDirection
+  container.style.justifyContent  = options.container.justifyContent
+  container.style.alignItems      = options.container.alignItems
+  container.style.boxSizing       = options.container.boxSizing
+  container.style.borderRadius    = options.container.borderRadius
+  container.style.boxShadow       = options.container.boxShadow
+  container.style.border          = options.container.border
+  container.style.color           = options.container.color
 
   modalEl.innerHTML = ""
   modalEl.append(container)
@@ -56,20 +78,20 @@ function initClickEvent (modalBtn, modalEl, options) {
 }
 
 function modalStyle(modalEl, options) {
-  modalEl.style.flexDirection     = "column"
-  modalEl.style.justifyContent    = "center"
-  modalEl.style.alignItems        = "center"
-  modalEl.style.padding           =  options && options.padding || "20px"
-  modalEl.style.display           = "none"
-  modalEl.style.position          = "fixed"
-  modalEl.style.top               = "0px"
-  modalEl.style.left              = "0px"
-  modalEl.style.zIndex            = options && options.zIndex || "10"
-  modalEl.style.width             = "100%"
-  modalEl.style.maxWidth          = "none"
-  modalEl.style.height            = "100vh"
-  modalEl.style.boxSizing         = "border-box"
-  modalEl.style.backgroundColor   = options && options.bgColor || "rgba(0,0,0, 0.7)"
+  modalEl.style.flexDirection     = options.flexDirection
+  modalEl.style.justifyContent    = options.justifyContent
+  modalEl.style.alignItems        = options.alignItems
+  modalEl.style.padding           = options.padding
+  modalEl.style.display           = options.display
+  modalEl.style.position          = options.position
+  modalEl.style.top               = options.top
+  modalEl.style.left              = options.left
+  modalEl.style.zIndex            = options.zIndex
+  modalEl.style.width             = options.width
+  modalEl.style.maxWidth          = options.maxWidth
+  modalEl.style.height            = options.height
+  modalEl.style.boxSizing         = options.boxSizing
+  modalEl.style.backgroundColor   = options.backgroundColor
 }
 
 function fade (modalEl, count, options) {
@@ -90,4 +112,42 @@ function fade (modalEl, count, options) {
       document.body.style.overflowY == "hidden" ? document.body.style.overflowY = "" : document.body.style.overflowY = "hidden"
     }
   }, interval / 100); 
+}
+
+function defaultOptions (options) {
+  let defaultOptions = { 
+    flexDirection:   "column",
+    justifyContent:  "center",
+    alignItems:      "center",
+    padding:         "20px",
+    display:         "none",
+    position:        "fixed",
+    top:             "0px",
+    left:            "0px",
+    zIndex:          "10",
+    width:           "100%",
+    maxWidth:        "none",
+    height:          "100vh",
+    boxSizing:       "border-box",
+    backgroundColor: "rgba(0,0,0, 0.7)",
+    container: { 
+      active: false,
+      padding: "10px",
+      backgroundColor: "#fff",
+      width: "500px",
+      maxWidth: "500px",
+      height: "auto",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      boxSizing: "border-box",
+      borderRadius: "5px",
+      boxShadow: "0px 1px 2px 0px black",
+      border: "none",
+      color: "#000"
+    } 
+  }
+
+  return { ...defaultOptions, ...options }
 }

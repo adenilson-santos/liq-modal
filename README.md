@@ -35,12 +35,12 @@ liqModals()
 You can try get liq-modal.js or liq-modal.min.js files/cdn's and put inside of your project, then call liqModals()...
 ```html
 <!-- Use the CDN's minified versions (use just one)-->
-<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.9/liq-modal.min.js"></script>
-<script src="https://unpkg.com/liq-modal@1.0.9/liq-modal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.10/liq-modal.min.js"></script>
+<script src="https://unpkg.com/liq-modal@1.0.10/liq-modal.min.js"></script>
 
 <!-- Use the CDN's non minified versions (use just one) -->
-<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.9/liq-modal.js"></script>
-<script src="https://unpkg.com/liq-modal@1.0.9/liq-modal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.10/liq-modal.js"></script>
+<script src="https://unpkg.com/liq-modal@1.0.10/liq-modal.js"></script>
 
 <!-- Or local file -->
 <script src="liq-modal.min.js"></script>
@@ -108,6 +108,24 @@ liqModals({
 			border: '1px solid white' // Border of container
 		}
 	})
+</script>
+```
+
+#### Advanced Usage (Open and Close for any situations)
+
+```html
+<div id="my-modal">
+	Modal open after ajax
+</div>
+
+<button data-liq-modal-open="#my-modal">Here</button>
+
+<script>
+	liqModals({ container: { active: true } }) // activing style
+
+	// You can use this syntax for use in any sitiations (after ajax example)
+	liqModals({ selector: "#my-modal" }).open()
+	liqModals({ selector: "#my-modal" }).close()
 </script>
 ```
 
