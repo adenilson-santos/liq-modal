@@ -7,7 +7,8 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "babel ./liq-modal-dev.js -o ./liq-modal.js && uglifyjs ./liq-modal.js -o ./liq-modal.min.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,11 @@
   "bugs": {
     "url": "https://github.com/adenilson-santos/liq-modal/issues"
   },
-  "homepage": "https://github.com/adenilson-santos/liq-modal#readme"
+  "homepage": "https://github.com/adenilson-santos/liq-modal#readme",
+  "dependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "uglify-js": "^3.6.0"
+  }
 }
