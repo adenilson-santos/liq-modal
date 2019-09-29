@@ -35,12 +35,12 @@ liqModals()
 You can try get liq-modal.js or liq-modal.min.js files/cdn's and put inside of your project, then call liqModals()...
 ```html
 <!-- Use the CDN's minified versions (use just one)-->
-<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.6/liq-modal.min.js"></script>
-<script src="https://unpkg.com/liq-modal@1.0.6/liq-modal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.7/liq-modal.min.js"></script>
+<script src="https://unpkg.com/liq-modal@1.0.7/liq-modal.min.js"></script>
 
 <!-- Use the CDN's non minified versions (use just one) -->
-<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.6/liq-modal.js"></script>
-<script src="https://unpkg.com/liq-modal@1.0.6/liq-modal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.7/liq-modal.js"></script>
+<script src="https://unpkg.com/liq-modal@1.0.7/liq-modal.js"></script>
 
 <!-- Or local file -->
 <script src="liq-modal.min.js"></script>
