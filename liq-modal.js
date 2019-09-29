@@ -1,5 +1,5 @@
 function liqModals (options = { container: { active: false } }) {
-  const modalBtns = document.querySelectorAll(options.selector || ".liq-modal__btn")
+  const modalBtns = document.querySelectorAll("[data-liq-modal-open]")
   
   initAllModals(modalBtns, options)
 }

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script src="../liq-modal.min.js"></script>
+  <script src="../liq-modal.js"></script>
 
   <style>
       .content {
@@ -19,21 +19,14 @@
       First modal, content here.
   </div>
 
-
   <div id="my-modal-2">
     Second modal, content here.
   </div>
 
-  <div id="my-modal-3">
-    <div class="content">
-        Third and last modal.
-    </div>
-  </div>
+  <button data-liq-modal-open="#my-modal">Here</button>
+  
+  <button data-liq-modal-open="#my-modal-2">Open the second modal</button>
 
-  <button class="liq-modal__btn" data-liq-modal-open="#my-modal">Here</button>
-  <button class="liq-modal__btn" data-liq-modal-open="#my-modal-2">Open the second modal</button>
-
-  <button class="another-btn" data-liq-modal-open="#my-modal-3">Random button</button>
 </body>
   <script>
     // Ps: No one configuration is required
@@ -56,11 +49,5 @@
       }
     })
 
-    liqModals({ 
-      selector: ".another-btn", // Get specified elements by you. With this you can make specific changes
-      container: {
-       // ... 
-      }
-    })
   </script>
 </html>

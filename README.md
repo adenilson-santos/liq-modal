@@ -35,12 +35,12 @@ liqModals()
 You can try get liq-modal.js or liq-modal.min.js files/cdn's and put inside of your project, then call liqModals()...
 ```html
 <!-- Use the CDN's minified versions (use just one)-->
-<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.5/liq-modal.min.js"></script>
-<script src="https://unpkg.com/liq-modal@1.0.5/liq-modal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.6/liq-modal.min.js"></script>
+<script src="https://unpkg.com/liq-modal@1.0.6/liq-modal.min.js"></script>
 
 <!-- Use the CDN's non minified versions (use just one) -->
-<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.5/liq-modal.js"></script>
-<script src="https://unpkg.com/liq-modal@1.0.5/liq-modal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.6/liq-modal.js"></script>
+<script src="https://unpkg.com/liq-modal@1.0.6/liq-modal.js"></script>
 
 <!-- Or local file -->
 <script src="liq-modal.min.js"></script>
@@ -59,7 +59,7 @@ You can try get liq-modal.js or liq-modal.min.js files/cdn's and put inside of y
 	</div>
 </div>
   
-<button class="liq-modal__btn" data-liq-modal-open="#my-modal">Here</button>
+<button data-liq-modal-open="#my-modal">Here</button>
 
 <script>
 	liqModals() // Get all elements with default class liq-modal__btn (Global)
@@ -69,13 +69,12 @@ You can try get liq-modal.js or liq-modal.min.js files/cdn's and put inside of y
 #### Specific Usage (Specified tag)
 
 ```html
-<button class="another-btn" data-liq-modal-open="#my-modal-3">Random button</button>
+<button data-liq-modal-open="#my-modal-3">Random button</button>
   
 <script>
-liqModals({ // Get specified elements by you. With this you can make specific changes
-	selector: ".another-btn",
+liqModals({
 	container: {
-    active: true,
+    	active: true,
 		// ... You can use a container and personalizate it, see more in advanced use.
 	}
 })
@@ -89,7 +88,7 @@ liqModals({ // Get specified elements by you. With this you can make specific ch
 	First modal, content here.
 </div>
 
-<button class="liq-modal__btn" data-liq-modal-open="#my-modal">Here</button>
+<button data-liq-modal-open="#my-modal">Here</button>
 
 <script>
 	liqModals({

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script src="../liq-modal.min.js"></script>
+  <script src="../liq-modal.js"></script>
 
   <style>
       .content {
@@ -34,25 +34,21 @@
     </div>
   </div>
 
-  <button class="liq-modal__btn" data-liq-modal-open="#my-modal">Here</button>
-  <button class="liq-modal__btn" data-liq-modal-open="#my-modal-2">Open the second modal</button>
+  <button data-liq-modal-open="#my-modal">Here</button>
+  <button data-liq-modal-open="#my-modal-2">Open the second modal</button>
 
-  <button class="another-btn" data-liq-modal-open="#my-modal-3">Random button</button>
+  <button data-liq-modal-open="#my-modal-3">Random button</button>
   
   <!-- You can use the tag anchor work normally -->
-  <a id="modal-with-container" data-liq-modal-open="#my-modal">haha</a>
+  <a data-liq-modal-open="#my-modal">haha</a>
 
 </body>
   <script>
     liqModals() // Get all elements with default class liq-modal__btn
 
-    liqModals({ // Get specified elements by you. With this you can make specific changes
-      selector: ".another-btn"
-    })
 
     liqModals({
-      selector: "#modal-with-container",
-      container: true // Basic and default container modal
+      container: { active: true } // Basic and default container modal
     })
   </script>
 </html>
