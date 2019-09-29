@@ -41,7 +41,7 @@ function createContainer (modalEl, options) {
 
 function initClickEvent (modalBtn, modalEl, options) {
   modalBtn.onclick = (e) => {
-    if(e.target.tagName == "A") e.preventDefault() 
+    if(e.target.tagName == "A" && e.target.dataset.remote !== "true") e.preventDefault() 
     fade(modalEl, 0.1, options)
   }
   modalEl.onclick = function (e) {
