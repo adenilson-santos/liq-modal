@@ -6,7 +6,8 @@
 - Press Escape button to exit of modal
 - Just call liqModals() function and create a html tag to see the magic happen
 - Besides have now so much personalizations including inside of a container
-- The big differential is that just with liqModals() and the tags with liq-modal__btn class in anywhere you can use the modal.
+- The big differential is that just with liqModals() and the data-liq-modal-open attribute in anywhere you can use the modal.
+- Can open and close the modal using the .close() and .open() methods, after informate the selector.
 
 ## How to use
 ##### This is very simple, look.
@@ -35,14 +36,15 @@ liqModals()
 You can try get liq-modal.js or liq-modal.min.js files/cdn's and put inside of your project, then call liqModals()...
 ```html
 <!-- Use the CDN's minified versions (use just one)-->
-<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.10/liq-modal.min.js"></script>
-<script src="https://unpkg.com/liq-modal@1.0.10/liq-modal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.11/liq-modal.min.js"></script>
+<script src="https://unpkg.com/liq-modal@1.0.11/liq-modal.min.js"></script>
 
 <!-- Use the CDN's non minified versions (use just one) -->
-<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.10/liq-modal.js"></script>
-<script src="https://unpkg.com/liq-modal@1.0.10/liq-modal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/liq-modal@1.0.11/liq-modal.js"></script>
+<script src="https://unpkg.com/liq-modal@1.0.11/liq-modal.js"></script>
 
 <!-- Or local file -->
+<script src="liq-modal.js"></script>
 <script src="liq-modal.min.js"></script>
 ```
 
@@ -92,20 +94,21 @@ liqModals({
 
 <script>
 	liqModals({
-		bgColor: "dodgerblue", // Modal background color
+		backgroundColor: "dodgerblue", // Modal background color
 		padding: "0px", // Modal padding
 		zIndex: 50, // Modal z-index
 		fadeTime: 500, // Modal fade in/out time
 		container: {
 			active: true, // Active container inside modal?
 			padding: "20px", // Padding of container
-			bgColor: "orange", // Background color of container
+			backgroundColor: "orange", // Background color of container
 			width: "400px", // Width of container
 			maxWidth: "300px", // Max Width of container
 			height: "200px", // Height of container
-			radius: "10px", // Border Radius of container
-			shadow: "2px 2px 0px 0px black", // Box shadow of container 
-			border: '1px solid white' // Border of container
+			borderRadius: "10px", // Border Radius of container
+			boxShadow: "2px 2px 0px 0px black", // Box shadow of container 
+			border: '1px solid white' // Border of container,
+			color: "#fff"
 		}
 	})
 </script>
@@ -128,6 +131,11 @@ liqModals({
 	liqModals({ selector: "#my-modal" }).close()
 </script>
 ```
+
+#### Contribute
+
+After download the code use ever liq-modal-dev.js file to development, after make all changes type in your cli: *npm run dev* this will run babel in liq-modal file and after minify in liq-modal.min.js 
+Then go to pull request.
 
 ##### For more details take a look in the examples path.
 
