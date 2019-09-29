@@ -50,7 +50,7 @@ function initClickEvent(modalBtn, modalEl, options) {
   };
 
   modalEl.onclick = function (e) {
-    if (e.target !== e.target) return;
+    if (e.target !== this) return;
     fade(modalEl, -0.1, options);
   };
 
